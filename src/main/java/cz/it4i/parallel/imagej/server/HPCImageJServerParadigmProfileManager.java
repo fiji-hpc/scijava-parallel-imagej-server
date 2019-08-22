@@ -6,12 +6,13 @@ import org.scijava.parallel.ParadigmManager;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 
-import cz.it4i.parallel.runners.HPCImageJServerRunner;
+import cz.it4i.parallel.imagej.server.runners.HPCImageJServerRunnerUI;
+import cz.it4i.parallel.runners.HPCImageJRunner;
 import cz.it4i.parallel.runners.HPCSettings;
 import cz.it4i.parallel.runners.MultipleHostsParadigmManagerUsingRunner;
 import cz.it4i.parallel.runners.ParadigmProfileUsingRunner;
 import cz.it4i.parallel.runners.ServerRunner;
-import cz.it4i.parallel.ui.HPCImageJServerRunnerWithUI;
+import cz.it4i.parallel.ui.HPCImageJRunnerWithUI;
 import cz.it4i.parallel.ui.HavingOwnerWindow;
 import javafx.stage.Window;
 
@@ -59,7 +60,7 @@ public class HPCImageJServerParadigmProfileManager extends
 
 	@Override
 	protected Class<? extends ServerRunner<HPCSettings>> getTypeOfRunner() {
-		return HPCImageJServerRunnerWithUI.class;
+		return HPCImageJServerRunnerUI.class;
 	}
 
 	@Override
@@ -69,14 +70,14 @@ public class HPCImageJServerParadigmProfileManager extends
 	{
 		super.initParadigm(typedProfile, paradigm);
 		typedProfile.getSettings().setJobID(
-			((HPCImageJServerRunner) typedProfile.getAssociatedRunner()).getJob()
+			((HPCImageJRunner) typedProfile.getAssociatedRunner()).getJob()
 				.getID());
 	}
 
 	@Override
 	protected void initRunner(ServerRunner<?> runner) {
-		HPCImageJServerRunnerWithUI typedRunner =
-			(HPCImageJServerRunnerWithUI) runner;
+		HPCImageJRunnerWithUI typedRunner =
+			(HPCImageJRunnerWithUI) runner;
 		typedRunner.initOwnerWindow(ownerWindow);
 	}
 }
