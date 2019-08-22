@@ -81,7 +81,9 @@ class DefaultParameterTypeProvider implements
 				typeName = typeName.substring(prefix.length()).trim();
 			}
 		}
-		typeName = typeName.replaceAll("<[^>]*>", "");
+		if (typeName.contains("<")) {
+			typeName = typeName.substring(0, typeName.indexOf('<'));
+		}
 		return typeName;
 	}
 
