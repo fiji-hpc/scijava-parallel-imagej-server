@@ -7,8 +7,8 @@ public class HPCImageJServerRunnerUI extends HPCImageJRunnerWithUI {
 
 	public HPCImageJServerRunnerUI()
 	{
-		super(LocalImageJServerRunner.FSTPRPC_SERVER_PARAMETERS,
-			Wait4ImageJServer::doIt, 8080);
+		super(LocalImageJServerRunner.IMAGEJ_SERVER_PARAMETERS,
+			Wait4ImageJServer::doIt, LocalImageJServerRunner.PORT_NUMBER);
 	}
 
 	@Override
