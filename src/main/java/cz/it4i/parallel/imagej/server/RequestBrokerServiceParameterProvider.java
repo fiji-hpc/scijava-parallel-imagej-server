@@ -29,7 +29,7 @@ import cz.it4i.parallel.plugins.RequestBrokerServicePurgeCommand;
 import lombok.RequiredArgsConstructor;
 
 
-public class RequestBrokerServiceParameterProvider
+class RequestBrokerServiceParameterProvider
 {
 
 	public interface RequestID2ProcessorHolder extends SciJavaService {

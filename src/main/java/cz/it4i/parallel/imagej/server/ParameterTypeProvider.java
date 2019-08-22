@@ -1,7 +1,7 @@
 package cz.it4i.parallel.imagej.server;
 
 
-public interface ParameterTypeProvider {
+interface ParameterTypeProvider {
 	
 	String provideParameterTypeName(String commandName, String parameterName);
 }

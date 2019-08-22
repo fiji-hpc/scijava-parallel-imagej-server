@@ -49,7 +49,7 @@ import cz.it4i.parallel.SciJavaParallelRuntimeException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-public class ImageJServerWorker implements ParallelWorker {
+class ImageJServerWorker implements ParallelWorker {
 
 	private static final String HTTP_PROTOCOL = "http://";
 	private final String hostName;

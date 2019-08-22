@@ -10,7 +10,7 @@ import java.util.Map.Entry;
 
 import cz.it4i.parallel.Routines;
 
-public abstract class AbstractParameterProcessor implements ParameterProcessor {
+abstract class AbstractParameterProcessor implements ParameterProcessor {
 
 	private Map<String, PAppliedConversion> appliedConversions = new HashMap<>();
 

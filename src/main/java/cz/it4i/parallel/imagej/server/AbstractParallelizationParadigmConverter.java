@@ -5,7 +5,7 @@ import java.util.Set;
 
 import org.scijava.parallel.ParallelizationParadigm;
 
-public abstract class AbstractParallelizationParadigmConverter<O> implements
+abstract class AbstractParallelizationParadigmConverter<O> implements
 	ParallelizationParadigmConverter<O>,
 	Cloneable
 {

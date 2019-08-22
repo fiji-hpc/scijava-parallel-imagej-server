@@ -3,7 +3,7 @@ package cz.it4i.parallel.imagej.server;
 
 import java.util.Map;
 
-public class DefaultParameterProcessor extends AbstractParameterProcessor {
+class DefaultParameterProcessor extends AbstractParameterProcessor {
 
 	private Map<Class<?>, ParallelizationParadigmConverter<?>> converters;
 

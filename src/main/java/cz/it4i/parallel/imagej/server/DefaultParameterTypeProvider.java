@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @AllArgsConstructor
-public class DefaultParameterTypeProvider implements
+class DefaultParameterTypeProvider implements
 	ParameterTypeProvider
 {
 
