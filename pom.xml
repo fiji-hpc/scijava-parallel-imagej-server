@@ -9,7 +9,7 @@
 		<version>26.0.0</version>
 		<relativePath />
 	</parent>
-	<artifactId>scijava-parallel-fst</artifactId>
+	<artifactId>scijava-parallel-imagej-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Implementation of SciJava Parallel using ImageJ Server</name>
 	<description>Parallelization framework for SciJava applications.</description>
