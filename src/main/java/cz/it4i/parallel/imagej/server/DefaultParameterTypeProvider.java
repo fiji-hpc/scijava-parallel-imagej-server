@@ -21,7 +21,7 @@ class DefaultParameterTypeProvider implements
 	ParameterTypeProvider
 {
 
-	final private Map<String, Map<String, String>> mappedTypes = new HashMap<>();
+	private final Map<String, Map<String, String>> mappedTypes = new HashMap<>();
 
 	private int port;
 	private String host;
@@ -31,7 +31,7 @@ class DefaultParameterTypeProvider implements
 		String parameterName)
 	{
 		Map<String, String> paramToClass = mappedTypes.computeIfAbsent(
-			commandName, c -> obtainCommandInfo(c));
+			commandName, this::obtainCommandInfo);
 		return paramToClass.get(parameterName);
 	}
 

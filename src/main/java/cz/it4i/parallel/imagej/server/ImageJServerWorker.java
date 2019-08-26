@@ -401,7 +401,6 @@ class ImageJServerWorker implements ParallelWorker {
 			});
 		}
 
-		// TODO: support another types
 		private String getContentType(final String path) {
 			return "image/" + getImageType(path);
 		}

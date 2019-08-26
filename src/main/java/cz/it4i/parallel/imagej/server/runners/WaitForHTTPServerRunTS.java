@@ -12,7 +12,7 @@ class WaitForHTTPServerRunTS {
 		return new WaitForHTTPServerRunTS(urlStr);
 	}
 
-	final private String urlStr;
+	private final String urlStr;
 
 	private long waitTimeout = 200;
 

@@ -28,7 +28,7 @@ public class AbstractDatasetImageJServerConverter<T extends RandomAccessibleInte
 	extends AbstractParallelizationParadigmConverter implements Closeable
 {
 
-	private static int SIZE_OF_CHUNK = 1024 * 1024;
+	private static final int SIZE_OF_CHUNK = 1024 * 1024;
 
 	private static final String NAME_FOR_EXPORT = "export";
 
