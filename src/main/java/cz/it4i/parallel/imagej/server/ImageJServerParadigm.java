@@ -31,7 +31,7 @@ public class ImageJServerParadigm extends AbstractMultipleHostParadigm {
 
 	private ParameterTypeProvider typeProvider;
 
-	private Map<Class<?>, ParallelizationParadigmConverter<?>> mappers;
+	private Map<Class<?>, ParallelizationParadigmConverter> mappers;
 
 	// -- ImageJServerParadigm methods --
 
@@ -60,7 +60,7 @@ public class ImageJServerParadigm extends AbstractMultipleHostParadigm {
 			getMappers());
 	}
 
-	private synchronized Map<Class<?>, ParallelizationParadigmConverter<?>>
+	private synchronized Map<Class<?>, ParallelizationParadigmConverter>
 		getMappers()
 	{
 		if (mappers == null) {
@@ -77,7 +77,7 @@ public class ImageJServerParadigm extends AbstractMultipleHostParadigm {
 
 	}
 
-	private boolean isParadigmSupportedBy(ParallelizationParadigmConverter<?> m) {
+	private boolean isParadigmSupportedBy(ParallelizationParadigmConverter m) {
 		for (Class<? extends ParallelizationParadigm> clazz : m
 			.getSupportedParadigms())
 		{

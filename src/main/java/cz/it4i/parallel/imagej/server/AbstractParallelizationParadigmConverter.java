@@ -5,18 +5,17 @@ import java.util.Set;
 
 import org.scijava.parallel.ParallelizationParadigm;
 
-abstract class AbstractParallelizationParadigmConverter<O> implements
-	ParallelizationParadigmConverter<O>,
-	Cloneable
+abstract class AbstractParallelizationParadigmConverter implements
+	ParallelizationParadigmConverter, Cloneable
 {
 
 	private Set<Class<? extends ParallelizationParadigm>> supportedParadigms;
 
-	private Class<O> supportedParameterType;
+	private Class<?> supportedParameterType;
 
 	public AbstractParallelizationParadigmConverter(
 		Set<Class<? extends ParallelizationParadigm>> supportedParadigms,
-		Class<O> supportedType)
+		Class<?> supportedType)
 	{
 		this.supportedParadigms = supportedParadigms;
 		this.supportedParameterType = supportedType;
@@ -28,7 +27,7 @@ abstract class AbstractParallelizationParadigmConverter<O> implements
 	}
 
 	@Override
-	public Class<O> getOutputType() {
+	public Class<?> getOutputType() {
 		return supportedParameterType;
 	}
 

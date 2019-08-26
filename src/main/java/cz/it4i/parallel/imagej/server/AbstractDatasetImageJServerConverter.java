@@ -25,7 +25,7 @@ import net.imglib2.RandomAccessibleInterval;
 import org.scijava.plugin.Parameter;
 
 public class AbstractDatasetImageJServerConverter<T extends RandomAccessibleInterval<?>>
-	extends AbstractParallelizationParadigmConverter<T> implements Closeable
+	extends AbstractParallelizationParadigmConverter implements Closeable
 {
 
 	private static int SIZE_OF_CHUNK = 1024 * 1024;
@@ -48,13 +48,13 @@ public class AbstractDatasetImageJServerConverter<T extends RandomAccessibleInte
 		super(Collections.emptySet(), null);
 	}
 
-	public AbstractDatasetImageJServerConverter(Class<T> clazz) {
+	public AbstractDatasetImageJServerConverter(Class<?> clazz) {
 		super(Collections.unmodifiableSet(new HashSet<>(Arrays.asList(
 			ImageJServerParadigm.class))), clazz);
 	}
 
 	@Override
-	public ParallelizationParadigmConverter<T> cloneForWorker(
+	public ParallelizationParadigmConverter cloneForWorker(
 		RemoteDataHandler worker)
 	{
 		// Remark: better use ThreadLocal in this class, than

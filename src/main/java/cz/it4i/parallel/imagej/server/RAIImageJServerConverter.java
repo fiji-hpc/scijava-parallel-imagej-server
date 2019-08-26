@@ -1,21 +1,20 @@
 
 package cz.it4i.parallel.imagej.server;
 
-import net.imagej.Dataset;
+import net.imglib2.RandomAccessibleInterval;
 
 import org.scijava.plugin.Plugin;
 
 @Plugin(type = ParallelizationParadigmConverter.class)
 public class RAIImageJServerConverter extends
-	AbstractDatasetImageJServerConverter<Dataset>
-
+	AbstractDatasetImageJServerConverter<RandomAccessibleInterval<?>>
 {
 	public RAIImageJServerConverter() {
-		super(Dataset.class);
+		super(RandomAccessibleInterval.class);
 	}
 
 	@Override
-	protected AbstractDatasetImageJServerConverter<Dataset>
+	protected AbstractDatasetImageJServerConverter<RandomAccessibleInterval<?>>
 		createEmptyInstance()
 	{
 		return new RAIImageJServerConverter();

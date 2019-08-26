@@ -60,8 +60,8 @@ abstract class AbstractParameterProcessor implements ParameterProcessor {
 		return commandName;
 	}
 
-	protected abstract <T> ParallelizationParadigmConverter<T> construcConverter(
-		Class<T> expectedType, RemoteDataHandler servingWorker);
+	protected abstract ParallelizationParadigmConverter construcConverter(
+		Class<?> expectedType, RemoteDataHandler servingWorker);
 
 	private String getParameterTypeName(String parameter) {
 		return typeProvider.provideParameterTypeName(commandName, parameter);
@@ -69,9 +69,8 @@ abstract class AbstractParameterProcessor implements ParameterProcessor {
 
 	private Object doInputConversion(Entry<String, Object> parameter) {
 		String typeName = getParameterTypeName(parameter.getKey());
-		ParallelizationParadigmConverter<?> convertor = construcConverter(
-			supplyWithExceptionHandling(() -> Class.forName(
-				typeName)), worker);
+		ParallelizationParadigmConverter convertor = construcConverter(
+			supplyWithExceptionHandling(() -> Class.forName(typeName)), worker);
 		Object value = parameter.getValue();
 		if (convertor != null) {
 			appliedConversions.put(parameter.getKey(), new PAppliedConversion(value
@@ -94,8 +93,7 @@ abstract class AbstractParameterProcessor implements ParameterProcessor {
 			String typeName = getParameterTypeName(parameter.getKey());
 			Class<?> type = supplyWithExceptionHandling(() -> Class.forName(
 				typeName));
-			ParallelizationParadigmConverter<?> convertor = construcConverter(type,
-				worker);
+			ParallelizationParadigmConverter convertor = construcConverter(type,				worker);
 			if (convertor != null) {
 				value = convertor.convert(value, type);
 			}
@@ -106,10 +104,10 @@ abstract class AbstractParameterProcessor implements ParameterProcessor {
 	private class PAppliedConversion {
 
 		final Class<?> srcType;
-		final ParallelizationParadigmConverter<?> conversion;
+		final ParallelizationParadigmConverter conversion;
 
 		public PAppliedConversion(Class<?> srctype,
-			ParallelizationParadigmConverter<?> conversion)
+			ParallelizationParadigmConverter conversion)
 		{
 			super();
 			this.srcType = srctype;

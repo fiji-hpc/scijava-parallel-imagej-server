@@ -64,14 +64,14 @@ class ImageJServerWorker implements ParallelWorker {
 		new HashMap<>();
 	private RequestBrokerServiceParameterProvider requestBrokerServiceParameterProvider;
 	private PRemoteDataHandler remoteDataHandler;
-	private Map<Class<?>, ParallelizationParadigmConverter<?>> mappers;
+	private Map<Class<?>, ParallelizationParadigmConverter> mappers;
 	private ParameterTypeProvider typeProvider;
 	private PExecutor executer;
 
 	public ImageJServerWorker(final String hostName, final int port,
 		Context context,
 		ParameterTypeProvider typeProvider,
-		Map<Class<?>, ParallelizationParadigmConverter<?>> mappers)
+		Map<Class<?>, ParallelizationParadigmConverter> mappers)
 	{
 		this.hostName = hostName;
 		this.port = port;

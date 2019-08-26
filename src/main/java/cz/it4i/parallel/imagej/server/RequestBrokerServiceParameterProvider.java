@@ -64,7 +64,7 @@ class RequestBrokerServiceParameterProvider
 	private final ParameterTypeProvider typeProvider;
 
 
-	private final Map<Class<?>, ParallelizationParadigmConverter<?>> converters;
+	private final Map<Class<?>, ParallelizationParadigmConverter> converters;
 
 
 	@Parameter
@@ -76,7 +76,7 @@ class RequestBrokerServiceParameterProvider
 
 	public RequestBrokerServiceParameterProvider(
 		ParameterTypeProvider typeProvider,
-		Map<Class<?>, ParallelizationParadigmConverter<?>> mappers,
+		Map<Class<?>, ParallelizationParadigmConverter> mappers,
 		RemoteDataHandler defaultWorker)
 	{
 		this.typeProvider = typeProvider;

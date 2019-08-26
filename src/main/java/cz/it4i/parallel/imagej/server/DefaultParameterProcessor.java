@@ -5,24 +5,22 @@ import java.util.Map;
 
 class DefaultParameterProcessor extends AbstractParameterProcessor {
 
-	private Map<Class<?>, ParallelizationParadigmConverter<?>> converters;
+	private Map<Class<?>, ParallelizationParadigmConverter> converters;
 
 	public DefaultParameterProcessor(ParameterTypeProvider typeProvider,
 		String commandName, RemoteDataHandler servingWorker,
-		Map<Class<?>, ParallelizationParadigmConverter<?>> converters)
+		Map<Class<?>, ParallelizationParadigmConverter> converters)
 	{
 		super(typeProvider, commandName, servingWorker);
 		this.converters = converters;
 	}
 
 	@Override
-	protected <T> ParallelizationParadigmConverter<T> construcConverter(
-		Class<T> expectedType,
+	protected ParallelizationParadigmConverter construcConverter(
+		Class<?> expectedType,
 		RemoteDataHandler servingWorker)
 	{
-		@SuppressWarnings("unchecked")
-		ParallelizationParadigmConverter<T> result =
-			(ParallelizationParadigmConverter<T>) converters.get(expectedType);
+		ParallelizationParadigmConverter result = converters.get(expectedType);
 		if (result != null) {
 			return result.cloneForWorker(servingWorker);
 		}
