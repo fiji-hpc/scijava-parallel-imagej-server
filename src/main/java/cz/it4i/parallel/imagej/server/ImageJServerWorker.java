@@ -1,6 +1,8 @@
 
 package cz.it4i.parallel.imagej.server;
 
+import static cz.it4i.parallel.InternalExceptionRoutines.supplyWithExceptionHandling;
+
 import com.google.common.collect.Streams;
 
 import java.io.BufferedInputStream;
@@ -44,7 +46,6 @@ import org.scijava.Context;
 import org.scijava.plugin.SciJavaPlugin;
 
 import cz.it4i.parallel.ParallelWorker;
-import cz.it4i.parallel.Routines;
 import cz.it4i.parallel.SciJavaParallelRuntimeException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -381,7 +382,7 @@ class ImageJServerWorker implements ParallelWorker {
 		}
 
 		PRemoteObject importData(ContentBody contentBody) {
-			return Routines.supplyWithExceptionHandling(() -> {
+			return supplyWithExceptionHandling(() -> {
 
 				final String postUrl = HTTP_PROTOCOL + hostName + ":" + port +
 					"/objects/upload";

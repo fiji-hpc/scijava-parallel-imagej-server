@@ -1,10 +1,10 @@
 package cz.it4i.parallel.imagej.server.runners;
 
+import static cz.it4i.parallel.InternalExceptionRoutines.runWithExceptionHandling;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import cz.it4i.parallel.Routines;
 
 class WaitForHTTPServerRunTS {
 
@@ -33,7 +33,7 @@ class WaitForHTTPServerRunTS {
 				if (checkURL()) {
 					break;
 				}
-				Routines.runWithExceptionHandling(() -> Thread.sleep(waitTimeout));
+				runWithExceptionHandling(() -> Thread.sleep(waitTimeout));
 			}
 			catch (IOException e) {
 				// ignore waiting for start

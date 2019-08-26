@@ -1,14 +1,13 @@
 
 package cz.it4i.parallel.imagej.server;
 
-import static cz.it4i.parallel.Routines.supplyWithExceptionHandling;
+import static cz.it4i.parallel.InternalExceptionRoutines.runWithExceptionHandling;
+import static cz.it4i.parallel.InternalExceptionRoutines.supplyWithExceptionHandling;
 
 import java.io.Closeable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import cz.it4i.parallel.Routines;
 
 abstract class AbstractParameterProcessor implements ParameterProcessor {
 
@@ -52,7 +51,7 @@ abstract class AbstractParameterProcessor implements ParameterProcessor {
 		for (PAppliedConversion conversion : appliedConversions.values()) {
 			if (conversion.conversion instanceof Closeable) {
 				Closeable closeable = (Closeable) conversion.conversion;
-				Routines.runWithExceptionHandling(closeable::close);
+				runWithExceptionHandling(closeable::close);
 			}
 		}
 	}
@@ -70,8 +69,9 @@ abstract class AbstractParameterProcessor implements ParameterProcessor {
 
 	private Object doInputConversion(Entry<String, Object> parameter) {
 		String typeName = getParameterTypeName(parameter.getKey());
-		ParallelizationParadigmConverter<?> convertor = construcConverter(Routines
-			.supplyWithExceptionHandling(() -> Class.forName(typeName)), worker);
+		ParallelizationParadigmConverter<?> convertor = construcConverter(
+			supplyWithExceptionHandling(() -> Class.forName(
+				typeName)), worker);
 		Object value = parameter.getValue();
 		if (convertor != null) {
 			appliedConversions.put(parameter.getKey(), new PAppliedConversion(value

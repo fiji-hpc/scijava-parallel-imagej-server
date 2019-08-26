@@ -1,6 +1,6 @@
 package cz.it4i.parallel.imagej.server;
 
-import static cz.it4i.parallel.Routines.supplyWithExceptionHandling;
+import static cz.it4i.parallel.InternalExceptionRoutines.supplyWithExceptionHandling;
 
 import java.util.HashMap;
 import java.util.Map;

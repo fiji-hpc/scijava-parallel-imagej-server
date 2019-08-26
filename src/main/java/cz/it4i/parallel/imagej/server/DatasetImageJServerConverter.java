@@ -1,9 +1,9 @@
 
 package cz.it4i.parallel.imagej.server;
 
-import static cz.it4i.parallel.Routines.castTo;
-import static cz.it4i.parallel.Routines.getSuffix;
-import static cz.it4i.parallel.Routines.runWithExceptionHandling;
+import static cz.it4i.common.FileRoutines.getSuffix;
+import static cz.it4i.common.ObjectRoutines.castTo;
+import static cz.it4i.parallel.InternalExceptionRoutines.runWithExceptionHandling;
 
 import io.scif.io.ByteArrayHandle;
 import io.scif.services.DatasetIOService;
@@ -23,8 +23,6 @@ import net.imagej.Dataset;
 
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
-
-import cz.it4i.parallel.Routines;
 
 @Plugin(type = ParallelizationParadigmConverter.class)
 public class DatasetImageJServerConverter extends
@@ -87,7 +85,7 @@ public class DatasetImageJServerConverter extends
 		else if (input instanceof Dataset) {
 			workingDataSet = (Dataset) input;
 			workingDataSetID = parallelWorker.importData(workingDataSet.getName(),
-				is -> Routines.runWithExceptionHandling(() -> writeDataset2OutputStream(
+				is -> runWithExceptionHandling(() -> writeDataset2OutputStream(
 					workingDataSet, is)));
 			return workingDataSetID;
 		}
