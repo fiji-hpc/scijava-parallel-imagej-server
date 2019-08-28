@@ -11,9 +11,11 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.AbstractMap.SimpleImmutableEntry;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -23,7 +25,6 @@ import java.util.function.Function;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.StreamSupport;
 
 import javax.ws.rs.core.Response;
 
@@ -41,7 +42,7 @@ import org.apache.http.entity.mime.content.ContentBody;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
 import org.scijava.Context;
 import org.scijava.plugin.SciJavaPlugin;
 
@@ -192,8 +193,11 @@ class ImageJServerWorker implements ParallelWorker {
 	private Object restobj2localobj(Object object) {
 		if (object instanceof JSONArray) {
 			JSONArray array = (JSONArray) object;
-			return StreamSupport.stream(array.spliterator(), false).map(
-				this::restobj2localobj).collect(Collectors.toList());
+			Collection<Object> result = new LinkedList<>();
+			for(int i = 0; i < array.length(); i++) {
+				result.add(restobj2localobj(array.get(i)));
+			}
+			return result;
 		}
 		else if (object instanceof org.json.JSONObject) {
 			org.json.JSONObject jsonObject = (org.json.JSONObject) object;
@@ -202,7 +206,6 @@ class ImageJServerWorker implements ParallelWorker {
 		return object;
 	}
 
-	@SuppressWarnings("unchecked")
 	private JSONObject toJson(Map<String, ?> inputs) {
 		JSONObject result = new JSONObject();
 	
