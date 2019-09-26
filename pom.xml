@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>26.0.0</version>
+		<version>27.0.1</version>
 		<relativePath />
 	</parent>
 	<artifactId>scijava-parallel-imagej-server</artifactId>
@@ -28,8 +28,17 @@
 
 	<developers>
 		<developer>
-			<id>Kožusznik</id>
-			<name>Kožusznik Jan</name>
+			<id>kozusznikj</id>
+			<name>Jan Kožusznik</name>
+			<url>https://www.kozusznik.cz</url>
+			<roles>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
 		</developer>
 	</developers>
 	<contributors>
@@ -41,24 +50,23 @@
 
 	<mailingLists>
 		<mailingList>
-			<name>ImageJ Forum</name>
-			<archive>http://forum.imagej.net/</archive>
+			<name>Image.sc Forum</name>
+			<archive>https://forum.image.sc/tags/scijava-parallel</archive>
 		</mailingList>
 	</mailingLists>
 
 	<scm>
-		<connection>scm:git:git://github.com/maarzt/scijava-parallel-examples</connection>
-		<developerConnection>scm:git:git@github.com:maarzt/scijava-parallel-examples</developerConnection>
+		<connection>scm:git:git://github.com/fiji-hpc/scijava-parallel-imagej-server</connection>
+		<developerConnection>scm:git:git@github.com:fiji-hpc/scijava-parallel-imagej-server</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/maarzt/scijava-parallel-examples</url>
+		<url>https://github.com/fiji-hpc/scijava-parallel-imagej-server</url>
 	</scm>
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>http://github.com/maarzt/scijava-parallel-examples</url>
+		<url>https://github.com/fiji-hpc/scijava-parallel-imagej-server</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Travis CI</system>
-		<url>https://travis-ci.org/maarzt/scijava-parallel-examples</url>
+		<system>none</system>
 	</ciManagement>
 
 	<!-- Add usual stuff as per SciJava projects -->
