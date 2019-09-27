@@ -2,7 +2,7 @@ package cz.it4i.parallel.imagej.server;
 
 import java.io.Serializable;
 
-import cz.it4i.parallel.PersistentRPCParadigm.CompletableFutureID;
+import cz.it4i.parallel.internal.persistence.PersistentRPCParadigm.CompletableFutureID;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

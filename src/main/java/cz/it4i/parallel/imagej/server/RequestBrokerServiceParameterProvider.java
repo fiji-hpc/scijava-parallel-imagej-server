@@ -1,9 +1,9 @@
 package cz.it4i.parallel.imagej.server;
 
-import static cz.it4i.parallel.persistence.PersistentParallelizationParadigmImpl.INPUTS;
-import static cz.it4i.parallel.persistence.PersistentParallelizationParadigmImpl.MODULE_ID;
-import static cz.it4i.parallel.persistence.PersistentParallelizationParadigmImpl.REQUEST_IDS;
-import static cz.it4i.parallel.persistence.PersistentParallelizationParadigmImpl.RESULTS;
+import static cz.it4i.parallel.internal.persistence.PersistentParallelizationParadigmImpl.INPUTS;
+import static cz.it4i.parallel.internal.persistence.PersistentParallelizationParadigmImpl.MODULE_ID;
+import static cz.it4i.parallel.internal.persistence.PersistentParallelizationParadigmImpl.REQUEST_IDS;
+import static cz.it4i.parallel.internal.persistence.PersistentParallelizationParadigmImpl.RESULTS;
 
 import com.google.common.collect.Streams;
 
@@ -23,9 +23,9 @@ import org.scijava.service.AbstractService;
 import org.scijava.service.SciJavaService;
 import org.scijava.service.Service;
 
-import cz.it4i.parallel.plugins.RequestBrokerServiceCallCommand;
-import cz.it4i.parallel.plugins.RequestBrokerServiceGetResultCommand;
-import cz.it4i.parallel.plugins.RequestBrokerServicePurgeCommand;
+import cz.it4i.parallel.internal.plugins.RequestBrokerServiceCallCommand;
+import cz.it4i.parallel.internal.plugins.RequestBrokerServiceGetResultCommand;
+import cz.it4i.parallel.internal.plugins.RequestBrokerServicePurgeCommand;
 import lombok.RequiredArgsConstructor;
 
 

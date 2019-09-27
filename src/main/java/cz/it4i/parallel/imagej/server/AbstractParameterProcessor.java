@@ -1,8 +1,8 @@
 
 package cz.it4i.parallel.imagej.server;
 
-import static cz.it4i.parallel.InternalExceptionRoutines.runWithExceptionHandling;
-import static cz.it4i.parallel.InternalExceptionRoutines.supplyWithExceptionHandling;
+import static cz.it4i.parallel.internal.InternalExceptionRoutines.runWithExceptionHandling;
+import static cz.it4i.parallel.internal.InternalExceptionRoutines.supplyWithExceptionHandling;
 
 import java.io.Closeable;
 import java.util.HashMap;

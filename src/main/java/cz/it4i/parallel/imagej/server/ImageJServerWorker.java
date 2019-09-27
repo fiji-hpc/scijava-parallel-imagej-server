@@ -1,7 +1,7 @@
 
 package cz.it4i.parallel.imagej.server;
 
-import static cz.it4i.parallel.InternalExceptionRoutines.supplyWithExceptionHandling;
+import static cz.it4i.parallel.internal.InternalExceptionRoutines.supplyWithExceptionHandling;
 
 import com.google.common.collect.Streams;
 
@@ -46,8 +46,8 @@ import org.json.JSONObject;
 import org.scijava.Context;
 import org.scijava.plugin.SciJavaPlugin;
 
-import cz.it4i.parallel.ParallelWorker;
 import cz.it4i.parallel.SciJavaParallelRuntimeException;
+import cz.it4i.parallel.internal.ParallelWorker;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

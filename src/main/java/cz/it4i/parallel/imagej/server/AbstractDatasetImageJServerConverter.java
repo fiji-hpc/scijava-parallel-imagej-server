@@ -3,7 +3,7 @@ package cz.it4i.parallel.imagej.server;
 
 import static cz.it4i.common.FileRoutines.getSuffix;
 import static cz.it4i.common.ObjectRoutines.castTo;
-import static cz.it4i.parallel.InternalExceptionRoutines.runWithExceptionHandling;
+import static cz.it4i.parallel.internal.InternalExceptionRoutines.runWithExceptionHandling;
 
 import io.scif.io.ByteArrayHandle;
 import io.scif.services.DatasetIOService;

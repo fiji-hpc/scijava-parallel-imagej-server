@@ -12,8 +12,8 @@ import org.scijava.plugin.PluginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.it4i.parallel.AbstractMultipleHostParadigm;
-import cz.it4i.parallel.ParallelWorker;
+import cz.it4i.parallel.internal.AbstractMultipleHostParadigm;
+import cz.it4i.parallel.internal.ParallelWorker;
 
 @Plugin(type = ParallelizationParadigm.class)
 public class ImageJServerParadigm extends AbstractMultipleHostParadigm {
