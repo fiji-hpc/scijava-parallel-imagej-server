@@ -1,7 +1,7 @@
 
 package cz.it4i.parallel.imagej.server.runners;
 
-import cz.it4i.parallel.ui.HPCImageJRunnerWithUI;
+import cz.it4i.parallel.paradigm_managers.ui.HPCImageJRunnerWithUI;
 
 public class HPCImageJServerRunnerUI extends HPCImageJRunnerWithUI {
 

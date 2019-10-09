@@ -9,8 +9,8 @@ import net.imagej.server.ImageJServerService;
 import org.scijava.parallel.Status;
 import org.scijava.plugin.Parameter;
 
-import cz.it4i.parallel.runners.RunnerSettings;
-import cz.it4i.parallel.runners.ServerRunner;
+import cz.it4i.parallel.paradigm_managers.RunnerSettings;
+import cz.it4i.parallel.paradigm_managers.ServerRunner;
 
 public class InProcessImageJServerRunner implements
 	ServerRunner<RunnerSettings>

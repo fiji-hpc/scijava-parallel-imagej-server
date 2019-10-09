@@ -6,9 +6,9 @@ import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 
 import cz.it4i.parallel.imagej.server.runners.LocalImageJServerRunner;
-import cz.it4i.parallel.runners.LocalImageJRunnerSettings;
-import cz.it4i.parallel.runners.MultipleHostsParadigmManagerUsingRunner;
-import cz.it4i.parallel.runners.ServerRunner;
+import cz.it4i.parallel.paradigm_managers.LocalImageJRunnerSettings;
+import cz.it4i.parallel.paradigm_managers.MultipleHostsParadigmManagerUsingRunner;
+import cz.it4i.parallel.paradigm_managers.ServerRunner;
 
 @Plugin(type = ParadigmManager.class)
 public class LocalImageJServerParadigmProfileManager extends

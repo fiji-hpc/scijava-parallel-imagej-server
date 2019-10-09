@@ -7,13 +7,13 @@ import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 
 import cz.it4i.parallel.imagej.server.runners.HPCImageJServerRunnerUI;
-import cz.it4i.parallel.runners.HPCImageJRunner;
-import cz.it4i.parallel.runners.HPCSettings;
-import cz.it4i.parallel.runners.MultipleHostsParadigmManagerUsingRunner;
-import cz.it4i.parallel.runners.ParadigmProfileUsingRunner;
-import cz.it4i.parallel.runners.ServerRunner;
-import cz.it4i.parallel.ui.HPCImageJRunnerWithUI;
-import cz.it4i.parallel.ui.HavingOwnerWindow;
+import cz.it4i.parallel.paradigm_managers.HPCImageJRunner;
+import cz.it4i.parallel.paradigm_managers.HPCSettings;
+import cz.it4i.parallel.paradigm_managers.MultipleHostsParadigmManagerUsingRunner;
+import cz.it4i.parallel.paradigm_managers.ParadigmProfileUsingRunner;
+import cz.it4i.parallel.paradigm_managers.ServerRunner;
+import cz.it4i.parallel.paradigm_managers.ui.HPCImageJRunnerWithUI;
+import cz.it4i.parallel.paradigm_managers.ui.HavingOwnerWindow;
 import javafx.stage.Window;
 
 
