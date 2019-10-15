@@ -10,7 +10,7 @@
 		<relativePath />
 	</parent>
 	<artifactId>scijava-parallel-imagej-server</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>Implementation of SciJava Parallel using ImageJ Server</name>
 	<description>Parallelization framework for SciJava applications.</description>
 	<url>https://github.com/fiji-hpc/scijava-parallel-imagej-server</url>
