@@ -11,6 +11,7 @@ import cz.it4i.parallel.paradigm_managers.HPCImageJRunner;
 import cz.it4i.parallel.paradigm_managers.HPCSettings;
 import cz.it4i.parallel.paradigm_managers.MultipleHostsParadigmManagerUsingRunner;
 import cz.it4i.parallel.paradigm_managers.ParadigmProfileUsingRunner;
+import cz.it4i.parallel.paradigm_managers.ParadigmProfileWithSettings;
 import cz.it4i.parallel.paradigm_managers.ServerRunner;
 import cz.it4i.parallel.paradigm_managers.ui.HPCImageJRunnerWithUI;
 import cz.it4i.parallel.paradigm_managers.ui.HavingOwnerWindow;
@@ -45,7 +46,7 @@ public class HPCImageJServerParadigmProfileManager extends
 
 	@Override
 	protected boolean editSettings(
-		ParadigmProfileUsingRunner<HPCSettings> typedProfile)
+		ParadigmProfileWithSettings<HPCSettings> typedProfile)
 	{
 		Boolean correct = false;
 		
